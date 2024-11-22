@@ -7,7 +7,7 @@
 
 char timeString[20];
 
-void displayTime(){
+void displayTime(){                         //Showing current time in every functionality
     time_t t = time(NULL);
     struct tm date = *localtime(&t);
     system("cls");
@@ -17,12 +17,11 @@ void displayTime(){
     printf("%s\t\t\t\t%s\n\n\n",dateString,timeString);
 }
 
-// This is timmer funtion. It's sub funtionality of clock 
-
-void Timmer(){
+void Timmer(){      
+    displayTime();                        // This is a timmer funtion. It's sub funtionality of clock 
     int hour, minute, seconds,press;
     
-    printf("1.Press Start\n0.Back\n");
+    printf("1.Press Start\n");
     scanf("%d",&press);
     system("cls");
 
@@ -40,7 +39,20 @@ void Timmer(){
 
         printf("##############! TIMMER START !###############\n\n\t\t%.2d : %.2d : %.2d\n\n#############################################\n",hr,min,sec);
         if(hour==hr && minute==min && seconds==sec){
-            break;
+                printf("\n\n#################! TIME UP !##################\n\n");
+                printf("1. If you wanna start timmer again.\n2.Back to clock\n");
+                int n;
+                scanf("%d",&n);
+                system("cls");
+                switch (n)
+                {
+                case 1:
+                    Timmer();
+                
+                case 2:
+                    Clock();
+                }
+
         }
         sec++;
         
@@ -61,7 +73,7 @@ void Timmer(){
     }
 }
 
-void Alarm(){
+void Alarm(){                               //Set alarm based on current time
     displayTime();
     int alarmHour,alarmMinute;
     char AMorPM[3];
@@ -89,7 +101,7 @@ void Alarm(){
         int current_second = local->tm_sec;
         char current_am_pm[3] = "AM";
 
-        if(current_hour >= 12){
+        if(current_hour >= 12){               //12 hour format
             current_am_pm[0] = 'P';
             if(current_hour>12){
                 current_hour-=12;
@@ -107,20 +119,65 @@ void Alarm(){
         current_am_pm[0]==AMorPM[0] && current_am_pm[1]==AMorPM[1]){
                 displayTime();
                 printf("#############! WAKEUP BROO !##############\a\n\n");
-                break;
+                
+                printf("1. If you again set the alarm\n2.Back to clock\n");
+                int n;
+                scanf("%d",&n);
+                system("cls");
+                switch(n){
+                    case 1:
+                        Alarm();
+                    
+                    case 2:
+                        Clock();
+                }
             }
         }
     }
 
+    void Clock(){
+        displayTime();
+        printf("1.Alarm\n2.Timmer\n3.Back\n");
+        int n;
+        scanf("%d",&n);
+        system("cls");
+        switch (n)
+        {
+        case 1:
+            Alarm();
+        
+        case 2:
+            Timmer();
 
-// void Clock(){
+        case 3:
+            Menu();
+        }
 
-// }
+    }
+
+    void Menu(){
+        displayTime();
+        printf("1. Notebook              2. Calculator\n");
+        printf("3. Games                 4. Clock\n");
+        printf("5. Health                6. Calender\n");
+        printf("7. Settings              8. Back\n");
+        int n;
+        scanf("%d",&n);
+
+        switch (n)
+        {
+        case 4:
+            Clock();
+        
+        }
+
+    }
+
 
 int main(){
 
     displayTime();
-    Timmer();
-    Alarm();
+    Menu();
+
     return 0;
 }
