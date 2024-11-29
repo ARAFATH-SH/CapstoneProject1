@@ -14,22 +14,23 @@
 
 void Clock(){
         displayTime();
-        printf("# 1.Alarm                                                                    #\n");
-        printf("# 2.Timmer                                                                   #\n");
-        printf("# 3.Back                                                                     #\n");
-        printf("#                                                                            #\n");
-        printf("#                                                                            #\n");
-        printf("#                                                                            #\n");
-        printf("#                                                                            #\n");
-        printf("#                                                                            #\n");
-        printf("#                                                                            #\n");
-        printf("#                                                                            #\n");
-        printf("#                                                                            #\n");
-        printf("#                                                                            #\n");
-        printf("#                                                                            #\n");
-        printf("#                                                                            #\n");
-        printf("#                                                                            #\n");
-        printf("@############################################################################@\n");
+        
+        printf("\t\t# 1.Alarm                                         #\n");
+        printf("\t\t# 2.Timmer                                        #\n");
+        printf("\t\t# 3.Back                                          #\n");
+        printf("\t\t#                                                 #\n");
+        printf("\t\t#                                                 #\n");
+        printf("\t\t#                                                 #\n");
+        printf("\t\t#                                                 #\n");
+        printf("\t\t#                                                 #\n");
+        printf("\t\t#                                                 #\n");
+        printf("\t\t#                                                 #\n");
+        printf("\t\t#                                                 #\n");
+        printf("\t\t#                                                 #\n");
+        printf("\t\t#                                                 #\n");
+        printf("\t\t#                                                 #\n");
+        printf("\t\t#                                                 #\n");
+        printf("\t\t@#################################################@\n");
 
         int n;
         scanf("%d",&n);
