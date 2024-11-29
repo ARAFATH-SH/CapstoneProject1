@@ -5,7 +5,7 @@ mobile phone experience reminiscent of the classic phones from the 1990s. This
 project will involve creating a console project that brings back the charm of
 simpler, with basic calculator,games,notebook, settings & more functionality.
 
-**Features**:
+####**Features**:
 1. Notebook
 2. Calculator
 3. Clock
