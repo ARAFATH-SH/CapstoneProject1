@@ -6,7 +6,8 @@
 #define MAX_NOTE_LENGTH 1000
 #define FILENAME "notes.dat"
 
-typedef struct {
+typedef struct
+{
     char title[100];
     char content[MAX_NOTE_LENGTH];
 } Note;
@@ -22,44 +23,55 @@ void delete_note();
 void clear_input_buffer();
 void save_notes();
 void load_notes();
+void notebook();
 
-int main() {
+int main()
+{
+    notebook();
+
+    return 0;
+}
+
+void notebook()
+{
+
     load_notes(); // Load notes from file
 
     int choice;
 
-    while (1) {
+    while (1)
+    {
         display_menu();
         printf("Enter your choice: ");
         scanf("%d", &choice);
         clear_input_buffer();
 
-        switch (choice) {
-            case 1:
-                add_note();
-                break;
-            case 2:
-                view_notes();
-                break;
-            case 3:
-                search_note();
-                break;
-            case 4:
-                delete_note();
-                break;
-            case 5:
-                save_notes(); // Save notes before exiting
-                printf("Exiting the notebook. Goodbye!\n");
-                exit(0);
-            default:
-                printf("Invalid choice! Please try again.\n");
+        switch (choice)
+        {
+        case 1:
+            add_note();
+            break;
+        case 2:
+            view_notes();
+            break;
+        case 3:
+            search_note();
+            break;
+        case 4:
+            delete_note();
+            break;
+        case 5:
+            save_notes(); // Save notes before exiting
+            printf("Exiting the notebook. Goodbye!\n");
+            exit(0);
+        default:
+            printf("Invalid choice! Please try again.\n");
         }
     }
-
-    return 0;
 }
 
-void display_menu() {
+void display_menu()
+{
     printf("\n--- Text-Based Notebook ---\n");
     printf("1. Add a new note\n");
     printf("2. View all notes\n");
@@ -68,8 +80,10 @@ void display_menu() {
     printf("5. Exit\n");
 }
 
-void add_note() {
-    if (note_count >= MAX_NOTES) {
+void add_note()
+{
+    if (note_count >= MAX_NOTES)
+    {
         printf("Notebook is full! Cannot add more notes.\n");
         return;
     }
@@ -84,21 +98,26 @@ void add_note() {
     printf("Note added successfully!\n");
 }
 
-void view_notes() {
-    if (note_count == 0) {
+void view_notes()
+{
+    if (note_count == 0)
+    {
         printf("No notes available.\n");
         return;
     }
 
     printf("\n--- All Notes ---\n");
-    for (int i = 0; i < note_count; i++) {
+    for (int i = 0; i < note_count; i++)
+    {
         printf("Note %d: %s\n", i + 1, notes[i].title);
         printf("Content: %s\n\n", notes[i].content);
     }
 }
 
-void search_note() {
-    if (note_count == 0) {
+void search_note()
+{
+    if (note_count == 0)
+    {
         printf("No notes available.\n");
         return;
     }
@@ -109,21 +128,26 @@ void search_note() {
     search_term[strcspn(search_term, "\n")] = '\0';
     int found = 0;
     printf("\n--- Search Results ---\n");
-    for (int i = 0; i < note_count; i++) {
-        if (strstr(notes[i].title, search_term) != NULL || strstr(notes[i].content, search_term) != NULL) {
+    for (int i = 0; i < note_count; i++)
+    {
+        if (strstr(notes[i].title, search_term) != NULL || strstr(notes[i].content, search_term) != NULL)
+        {
             printf("Note %d: %s\n", i + 1, notes[i].title);
             printf("Content: %s\n\n", notes[i].content);
             found = 1;
         }
     }
 
-    if (!found) {
+    if (!found)
+    {
         printf("No notes found with the search term '%s'.\n", search_term);
     }
 }
 
-void delete_note() {
-    if (note_count == 0) {
+void delete_note()
+{
+    if (note_count == 0)
+    {
         printf("No notes available.\n");
         return;
     }
@@ -133,12 +157,14 @@ void delete_note() {
     scanf("%d", &note_index);
     clear_input_buffer();
 
-    if (note_index < 1 || note_index > note_count) {
+    if (note_index < 1 || note_index > note_count)
+    {
         printf("Invalid note number.\n");
         return;
     }
 
-    for (int i = note_index - 1; i < note_count - 1; i++) {
+    for (int i = note_index - 1; i < note_count - 1; i++)
+    {
         notes[i] = notes[i + 1];
     }
 
@@ -146,13 +172,17 @@ void delete_note() {
     printf("Note %d deleted successfully.\n", note_index);
 }
 
-void clear_input_buffer() {
-    while (getchar() != '\n');
+void clear_input_buffer()
+{
+    while (getchar() != '\n')
+        ;
 }
 
-void save_notes() {
+void save_notes()
+{
     FILE *file = fopen(FILENAME, "wb");
-    if (file == NULL) {
+    if (file == NULL)
+    {
         perror("Error saving notes");
         return;
     }
@@ -163,9 +193,11 @@ void save_notes() {
     printf("Notes saved successfully!\n");
 }
 
-void load_notes() {
+void load_notes()
+{
     FILE *file = fopen(FILENAME, "rb");
-    if (file == NULL) {
+    if (file == NULL)
+    {
         return; // No file to load
     }
 
