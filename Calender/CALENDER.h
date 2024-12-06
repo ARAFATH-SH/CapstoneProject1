@@ -62,12 +62,11 @@ void calender(){
     for (int day= 1; day <= daysInMonth; ++day) {
         printf("%4d", day);
         if ((day + dayOfWeek) % 7 == 0) {
-            // printf("%d %d",dayOfWeek,day);
             printf("                     #\n\t\t#");
         }
         last_day=(day + dayOfWeek) % 7;
     }
-    // printf("%d",last_day);
+
     if(last_day==6){
         printf("                         #\n\t\t#");
     }
@@ -87,8 +86,8 @@ void calender(){
         printf("                                             #\n\t\t#");
     }
     printf("                                                 #\n");
-    printf("\t\t# 1. Check Specific Months Calender               #\n");
-    printf("\t\t# 2. Back to Main Menu                            #\n");
+    printf("\t\t# 1.Check Specific Months Calender                #\n");
+    printf("\t\t# 2.Back to Main Menu                             #\n");
     printf("\t\t#                                                 #\n");
     printf("\t\t#                                                 #\n");
     printf("\t\t#                                                 #\n");
@@ -122,6 +121,7 @@ void calender(){
     else if(n==2){
         system("cls");
         Menu();
+        break;
     }
     
     }

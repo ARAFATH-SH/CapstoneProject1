@@ -1,6 +1,6 @@
 #ifndef HEALTH_H
 #define HEALTH_H
-
+#include "Health_Feature.h"
 // Function to display the Health menu
 void displayHealthMenu();
 

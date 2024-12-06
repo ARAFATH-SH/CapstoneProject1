@@ -85,9 +85,31 @@ void Alarm(){                               //Set alarm based on current time
         system("cls");
         if(current_hour==alarmHour && current_minute==alarmMinute &&
         current_am_pm[0]==AMorPM[0] && current_am_pm[1]==AMorPM[1]){
+                
+                for(int i=1; i<=30; i++){
+                    Beep(750, 500);
+                    Sleep(1000);
+                    displayTime();
+                    printf("\t\t#                                                 #\n");
+                    printf("\t\t#                                                 #\n");
+                    printf("\t\t#       ..........! WAKEUP BROO !..........       #\n");
+                    printf("\t\t#                                                 #\n");
+                    printf("\t\t#                                                 #\n");
+                    printf("\t\t#                                                 #\n");
+                    printf("\t\t#                                                 #\n");
+                    printf("\t\t#                                                 #\n");
+                    printf("\t\t#                                                 #\n");
+                    printf("\t\t#                                                 #\n");
+                    printf("\t\t#                                                 #\n");
+                    printf("\t\t#                                                 #\n");
+                    printf("\t\t#                                                 #\n");
+                    printf("\t\t#                                                 #\n");
+                    printf("\t\t#                                                 #\n");
+                    printf("\t\t@#################################################@\n");
+                }
+                system("cls");
                 displayTime();
-
-                printf("\t\t#       ..........! WAKEUP BROO !..........       #\a\n");
+                printf("\t\t#                                                 #\n");
                 printf("\t\t#                                                 #\n");
                 printf("\t\t#                                                 #\n");
                 printf("\t\t#                                                 #\n");
@@ -110,11 +132,15 @@ void Alarm(){                               //Set alarm based on current time
                 switch(n){
                     case 1:
                         Alarm();
+                        break;
                     
                     case 2:
                         Clock();
+                        break;
                 }
+                
             }
         }
+
     }
 #endif

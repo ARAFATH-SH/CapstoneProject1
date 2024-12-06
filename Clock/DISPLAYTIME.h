@@ -20,7 +20,7 @@ void displayTime(){                         //Showing current time in every func
     strftime(timeString,200,"%I:%M %p",&date);
     printf("\n\n");
     printf("\t\t@#################################################@\n");
-    printf("\t\t# %s                         %s #\n",dateString,timeString);
+    printf("\t\t# %s                        %s  #\n",dateString,timeString);
     printf("\t\t#                                                 #\n");
 }
 #endif

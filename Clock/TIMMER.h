@@ -89,7 +89,7 @@ void Timmer(){
                 printf("\t\t#                                                 #\n");
                 printf("\t\t#                                                 #\n");
                 printf("\t\t# 1. If you wanna start timmer again.             #\n");
-                printf("\t\t# 2.Back to clock                                 #\n");
+                printf("\t\t# 2. Back to clock                                #\n");
                 printf("\t\t#                                                 #\n");
                 printf("\t\t#                                                 #\n");
                 printf("\t\t#                                                 #\n");
@@ -107,9 +107,12 @@ void Timmer(){
                 {
                 case 1:
                     Timmer();
-                
+                    break;
                 case 2:
                     Clock();
+                    break;
+                default:
+                    break;
                 }
 
         }
@@ -129,6 +132,8 @@ void Timmer(){
         system("cls");
 
         }
+        
     }
+    
 }
 #endif

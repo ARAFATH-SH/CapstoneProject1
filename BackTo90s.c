@@ -9,6 +9,8 @@
 #include "Clock/CLOCKMENU.h"
 #include "Calender/CALENDER.h"
 #include "D:\Capstone\Back_To_90s\MainMenu\MENU.h"
+#include "Settings/setting.h"
+
 #define TIME_PER_CYCLE 60
 
 int main(){

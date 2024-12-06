@@ -1,5 +1,6 @@
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
+#include "Calculation.h"
 
 // Function to display the menu
 void displayMenu();

@@ -16,7 +16,7 @@ void Clock(){
         displayTime();
         
         printf("\t\t# 1.Alarm                                         #\n");
-        printf("\t\t# 2.Timmer                                        #\n");
+        printf("\t\t# 2.Timer                                         #\n");
         printf("\t\t# 3.Back                                          #\n");
         printf("\t\t#                                                 #\n");
         printf("\t\t#                                                 #\n");
@@ -39,12 +39,15 @@ void Clock(){
         {
         case 1:
             Alarm();
+            break;
         
         case 2:
             Timmer();
+            break;
 
         case 3:
             Menu();
+            break;
         }
 
     }
