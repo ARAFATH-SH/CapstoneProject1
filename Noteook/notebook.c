@@ -72,12 +72,19 @@ void notebook()
 
 void display_menu()
 {
-    printf("\n--- Text-Based Notebook ---\n");
-    printf("1. Add a new note\n");
-    printf("2. View all notes\n");
-    printf("3. Search for a note\n");
-    printf("4. Delete a note\n");
-    printf("5. Exit\n");
+    printf("\t#=============================== Text-Based Notebook =================================#\n");
+    printf("\t#\t\t                                                                      #\n");
+    printf("\t#\t\t                                                                      #\n");
+    printf("\t#\t\t                                                                      #\n");
+    printf("\t# 1. Add a new note\t\t                                                      #\n");
+    printf("\t# 2. View all notes\t\t                                                      #\n");
+    printf("\t# 3. Search for a note\t\t                                                      #\n");
+    printf("\t# 4. Delete a note\t\t                                                      #\n");
+    printf("\t# 5. Exit\t\t                                                              #\n");
+    printf("\t#\t\t                                                                      #\n");
+    printf("\t#\t\t                                                                      #\n");
+    printf("\t#\t\t                                                                      #\n");
+    printf("\t@#####################################################################################@\n");
 }
 
 void add_note()
@@ -106,12 +113,20 @@ void view_notes()
         return;
     }
 
-    printf("\n--- All Notes ---\n");
+    printf("\n\t#================================= All Notes =========================================#\n");
+    printf("\t#\t\t                                                                      #\n");
+    printf("\t#\t\t                                                                      #\n");
+    printf("\t#\t\t                                                                      #\n");
+
     for (int i = 0; i < note_count; i++)
     {
-        printf("Note %d: %s\n", i + 1, notes[i].title);
-        printf("Content: %s\n\n", notes[i].content);
+        printf("\t# Note %d: %s\n", i + 1, notes[i].title);
+        printf("\t# Content: %s\n\t#\n", notes[i].content);
     }
+    printf("\t#\t\t                                                                      #\n");
+    printf("\t#\t\t                                                                      #\n");
+    printf("\t#\t\t                                                                      #\n");
+    printf("\t@#####################################################################################@\n\n\n");
 }
 
 void search_note()
