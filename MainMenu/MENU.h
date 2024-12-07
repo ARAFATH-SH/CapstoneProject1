@@ -11,6 +11,7 @@
 #include "D:\Capstone\Back_To_90s\Health\Health_Feature.h"
 #include "D:\Capstone\Back_To_90s\Settings\setting.h"
 #include "D:\Capstone\Back_To_90s\Game\Game.h"
+#include "D:\Capstone\Back_To_90s\Notebook\Notebook.h"
 
 void Menu(){
         displayTime();
@@ -36,7 +37,7 @@ void Menu(){
         switch (n)
         {
         case 1:
-            //notebook();
+            notebook();
             break;
         case 2:
             calculator();

@@ -3,17 +3,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../Clock/DISPLAYTIME.h"
+#include "../MainMenu/MENU.h"
 
 void changeRingtoneVolume();
 void adjustBrightness();
 void displaySettingsMenu();
-void changeLanguage();
 
 void displaySettingsMenu() {
     int n;
 
     while (1) {
-        system("cls");
         displayTime();
         
         printf("\t\t#      =========== Settings Menu ==========       #\n");
@@ -21,8 +20,8 @@ void displaySettingsMenu() {
         printf("\t\t#                                                 #\n");
         printf("\t\t# 1. Change Ringtone Volume                       #\n");
         printf("\t\t# 2. Adjust Brightness                            #\n");
-        printf("\t\t# 3. Change Language                              #\n");
-        printf("\t\t# 4. Back to the menu                             #\n");
+        printf("\t\t# 3. Back to the menu                             #\n");
+        printf("\t\t#                                                 #\n");
         printf("\t\t#                                                 #\n");
         printf("\t\t#                                                 #\n");
         printf("\t\t#                                                 #\n");
@@ -44,14 +43,11 @@ void displaySettingsMenu() {
                 adjustBrightness();
                 break;
             case 3:
-                changeLanguage();
-                break;
-            case 4:
                 Menu();
                 break;
-            // default:
-            //     displaySettingsMenu();
-            //     break;
+            default:
+                displaySettingsMenu();
+                break;
         }
     }
 }
@@ -59,8 +55,9 @@ void displaySettingsMenu() {
 void changeRingtoneVolume() {
     
     system("cls");
-    int volume;
     displayTime();
+    
+    int volume;
 
     printf("\t\t#     ======== Change Ringtone Volume ========    #\n");
     printf("\t\t#                                                 #\n");
@@ -80,15 +77,15 @@ void changeRingtoneVolume() {
     printf("\t\t@#################################################@\n");
 
     scanf("%d", &volume);
-
+    system("cls");
+    displayTime();
     if (volume >= 0 && volume <= 10) {
-        system("cls");
-        displayTime();
+        
 
         printf("\t\t#                                                 #\n");
         printf("\t\t#                                                 #\n");
         printf("\t\t#                                                 #\n");
-        printf("\t\t# Ringtone volume set to %d.                      #\n", volume);
+        printf("\t\t# Ringtone volume set to %d.                       #\n", volume);
         printf("\t\t#                                                 #\n");
         printf("\t\t#                                                 #\n");
         printf("\t\t#                                                 #\n");
@@ -101,9 +98,8 @@ void changeRingtoneVolume() {
         printf("\t\t#                                                 #\n");
         printf("\t\t#                                                 #\n");
         printf("\t\t@#################################################@\n");
-    } else {
-        system("cls");
-        displayTime();
+    } 
+    else {
         
         printf("\t\t#                                                 #\n");
         printf("\t\t#                                                 #\n");
@@ -123,6 +119,8 @@ void changeRingtoneVolume() {
         printf("\t\t@#################################################@\n");
         
     }
+    _sleep(2000);
+    system("cls");
 }
 
 void adjustBrightness() {
@@ -150,15 +148,15 @@ void adjustBrightness() {
         
     scanf("%d", &brightness);
 
+    system("cls");
+     displayTime();
 
     if (brightness >= 0 && brightness <= 10) {
-        system("cls");
-        displayTime();
-
+        
         printf("\t\t#                                                 #\n");
         printf("\t\t#                                                 #\n");
         printf("\t\t#                                                 #\n");
-        printf("\t\t# Brightness set to %d.                           #\n", brightness);
+        printf("\t\t# Brightness set to %d.                            #\n", brightness);
         printf("\t\t#                                                 #\n");
         printf("\t\t#                                                 #\n");
         printf("\t\t#                                                 #\n");
@@ -172,9 +170,8 @@ void adjustBrightness() {
         printf("\t\t#                                                 #\n");
         printf("\t\t@#################################################@\n");
         
-    } else {
-        system("cls");
-        displayTime();
+    } 
+    else {
         
         printf("\t\t#                                                 #\n");
         printf("\t\t#                                                 #\n");
@@ -194,101 +191,7 @@ void adjustBrightness() {
         printf("\t\t@#################################################@\n");
         
     }
-}
-
-void changeLanguage() {
-    int language;
-
+    _sleep(2000);
     system("cls");
-    displayTime();
-    
-    printf("\t\t#        ======== Change Language ========        #\n");
-    printf("\t\t#                                                 #\n");
-    printf("\t\t#                                                 #\n");
-    printf("\t\t# 1. English                                      #\n");
-    printf("\t\t# 2. Spanish                                      #\n");
-    printf("\t\t# 3. French                                       #\n");
-    printf("\t\t#                                                 #\n");
-    printf("\t\t#                                                 #\n");
-    printf("\t\t#                                                 #\n");
-    printf("\t\t#                                                 #\n");
-    printf("\t\t#                                                 #\n");
-    printf("\t\t#                                                 #\n");
-    printf("\t\t#                                                 #\n");
-    printf("\t\t#                                                 #\n");
-    printf("\t\t#                                                 #\n");
-    printf("\t\t@#################################################@\n");
-
-    scanf("%d", &language);
-
-
-    switch (language) {
-        case 1:
-            system("cls");
-            displayTime();
-            
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t# Language set to English.                        #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t@#################################################@\n");
-            
-            break;
-        case 2:
-            system("cls");
-            displayTime();
-            
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t# Language set to Spanish.                        #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t@#################################################@\n");
-
-            break;
-        case 3:
-            system("cls");
-            displayTime();
-            
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t# Language set to French.                         #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t#                                                 #\n");
-            printf("\t\t@#################################################@\n");
-
-            break;
-    }
 }
-#endif 
+#endif

@@ -35,7 +35,6 @@ void displayHealthMenu()
 }
 
 // Function to calculate BMI and provide a suggestion
-// Function to calculate BMI and provide a suggestion
 void calculateBMI()
 {
     double weight, heightInMeters, feet, inches, bmi;
